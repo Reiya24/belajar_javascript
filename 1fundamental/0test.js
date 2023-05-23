@@ -1,22 +1,29 @@
-const { inspect } = require('util');
+class Developer {
+    constructor(name) {
+        this.name = name;
+    }
 
-const visitsCountMap = new WeakMap(); // Menyimpan daftar user
-
-function countUser(user) {
-    let count = visitsCountMap.get(user) || 0;
-    visitsCountMap.set(user, count + 1);
+    commitChanges() {
+        console.log(`${this.name} is committing changes...`);
+    }
 }
 
-let jonas = { name: "Jonas" };
-countUser(jonas);  // Menambahkan user "Jonas"
+function canBuildUI(developer) {
+    return {
+        buildUI: () => {
+            console.log(`${developer.name} is building UI...`);
+        }
+    }
+}
 
-jonas = null;  // Data object "Jonas" dihapus
 
-// delay dibutuhkan untuk menunggu garbage collector bekerja
-setTimeout(function() {
-    console.log(inspect(visitsCountMap, { showHidden: true }));
-}, 10000);
+function createFrontEndDeveloper(name) {
+    const developer = new Developer(name);
+    return Object.assign(developer, canBuildUI(developer));
+}
 
-/* output
-  WeakMap {  }
-*/
+
+const frontEndDeveloper = createFrontEndDeveloper('Fulan');
+frontEndDeveloper.commitChanges();
+frontEndDeveloper.buildUI();
+console.log(`is ${frontEndDeveloper.name} developer? `, frontEndDeveloper instanceof Developer);
