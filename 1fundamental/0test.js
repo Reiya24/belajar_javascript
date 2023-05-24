@@ -20,7 +20,7 @@ function canBuildUI(developer) {
 function createFrontEndDeveloper(name) {
     const developer = new Developer(name);
     return Object.assign(developer, canBuildUI(developer));
-}
+}z
 
 
 const frontEndDeveloper = createFrontEndDeveloper('Fulan');
