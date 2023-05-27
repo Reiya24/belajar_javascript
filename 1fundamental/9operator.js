@@ -17,6 +17,7 @@ console.log(12 < 10);
 console.log(10 >= 10);
 console.log(10 <= 10);
 
+// di javascript operator == tidak akan membandingan tipe data
 console.log(" == && ===")
 console.log(10 == "10");
 console.log(10 === "10");

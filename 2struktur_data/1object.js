@@ -1,16 +1,25 @@
+// tipe data object key value mirip dictionary pada python
+
 const user = {
-    firstName: "Reiya",
-    lastName: "Tenggara",
-    age: 18,
-    student: false,
-    city: "jakarta"
-};
+    fistName: 'Reiya',
+    lastName: 'Tenggara',
+    age: 19,
+    student: true,
+}
 
-console.log(`my name is ${user.firstName} ${user.lastName}, i'm from ${user["city"]}`);
+console.log(user);
+//memanggil nilai
+console.log(user.fistName); //atau
+console.log(user['fistName']);
 
-user.firstName = "miki"
-user["lastName"] = "misa"
+//mengubah nilai
+user.student = false; //atau
+user['student'] = false;
 
-console.log(`my name is ${user.firstName} ${user.lastName}, i'm from ${user["city"]}`);
-
-delete user.student;
+/*
+alasan kenapa obect user bisa dirubah nilainya karena
+mengubah nilai berbeda dengan menginisialisasi ulang nilai,
+ketika membuat sebuah object, kita tidak terikat dengan property
+didalamnya sehingga kita masih bisa memodifikasi nilainya. berbeda
+jika kita menginisialisasi ulang variable dan objecte
+ */

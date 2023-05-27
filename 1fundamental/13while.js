@@ -5,7 +5,7 @@ while (nilai <= 100) {
     nilai++;
 }
 
-console.log("========")
+console.log('========');
 
 nilai = 1;
 do {

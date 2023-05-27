@@ -1,11 +1,11 @@
 for (let i = 0; i < 10; i++) {
-    console.log(i)
+    console.log(i);
 }
 
 //for of loop
 
-const fruit = ["banana" ,"cherry", "apple", "melon"];
+const fruitFruitan = ["banana" ,"cherry", "apple", "melon"];
 
-for (const looping of fruit) {
-    console.log(looping)
+for (const fruit of fruitFruitan) {
+    console.log(fruit);
 }

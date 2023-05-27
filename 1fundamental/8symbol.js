@@ -1,5 +1,6 @@
-const id = Symbol("id");
+// identifier symbol unik
+const id = Symbol('id');
 console.log(id);
 
-const id2 = Symbol("id");
+const id2 = Symbol('id');
 console.log(id == id2);
