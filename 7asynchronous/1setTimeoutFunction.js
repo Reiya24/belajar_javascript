@@ -4,4 +4,4 @@ setTimeout(() => {
     console.log("terima kasih sudah mampir");
 },3000);
 
-console.log("ada yang bisa dibantu?")
+console.log("ada yang bisa dibantu?");

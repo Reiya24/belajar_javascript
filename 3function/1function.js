@@ -1,43 +1,45 @@
-function tambah(nomor1, nomor2) {
-    return nomor1 + nomor2;
+console.log('===membuat fungsi');
+
+console.log('===tanpa return');
+function sayHello(name, language = 'indonesia') {
+    if (language === 'indonesia') {
+        console.log(`halo ${name}`);
+    } else if (language === 'french') {
+        console.log(`bonjour ${name}`);
+    } else {
+        console.log(`hello ${name}`);
+    }
+
 }
 
-console.log(tambah(11,2));
+sayHello('reiya', 'indonesia');
+sayHello('reiya','3', '2');
 
-function sayHello() {
-    console.log("hello kitty");
+console.log('===menggunakakn return');
+
+function sayHelloReturn(name, language) {
+    if (language === 'indonesia') {
+        return `halo ${name}`;
+    } else if (language === 'french') {
+        return `bonjour ${name}`;
+    } else {
+        return `hello ${name}`;
+    }
 }
-sayHello();
 
-const sayHello2 = function (name) {
-    return `hello ${name}`
-}
+console.log(sayHelloReturn('tomkun', 'unknown'));
 
-console.log(sayHello2("reiya"));
+console.log('===memanfaatkan destructuring object untuk mendapatkan nilainya');
 
-const peserta = {
-    firstName: "reiya",
-    lastName: "tenggara",
+const user = {
+    id: 24,
+    firstName: 'reiya',
+    lastName: 'tenggara',
 };
 
-function namaPeserta({firstName, lastName}) {
-    console.log(`${firstName} ${lastName}`);
+function introduce({firstname, lastName}) {
+    console.log(`hello, my name is ${firstname} ${lastName}`);
 }
 
-namaPeserta(peserta);
+introduce(user);
 
-function perkenalan(nama, asal="jakarta"){
-    console.log(`hallo, saya ${nama} dari ${asal}`);
-}
-perkenalan("reiya");
-perkenalan("miki", "subang");
-
-function hitung(...nomor) {
-    let hasil = 0;
-    for (let i of  nomor){
-        hasil += i;
-    }
-    return hasil;
-}
-
-console.log(hitung(1,2,3,4,5));
